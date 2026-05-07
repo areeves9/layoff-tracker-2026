@@ -7,6 +7,7 @@ export default function LayoffTable({ layoffs, sectorColor, sectorLabels }) {
       borderRadius: '4px',
       overflow: 'hidden',
     }}>
+      <div className="table-scroll">
       <table style={{
         width: '100%',
         borderCollapse: 'collapse',
@@ -15,8 +16,14 @@ export default function LayoffTable({ layoffs, sectorColor, sectorLabels }) {
       }}>
         <thead>
           <tr style={{ background: 'var(--surface-2)', borderBottom: '1px solid var(--border)' }}>
-            {['Company', 'Jobs Cut', 'Sector', 'Month', 'Stated Reason'].map(h => (
-              <th key={h} style={{
+            {[
+              { label: 'Company' },
+              { label: 'Jobs Cut' },
+              { label: 'Sector' },
+              { label: 'Month' },
+              { label: 'Stated Reason', className: 'col-reason' },
+            ].map(h => (
+              <th key={h.label} className={h.className || ''} style={{
                 padding: '10px 14px',
                 textAlign: 'left',
                 color: 'var(--text-muted)',
@@ -26,7 +33,7 @@ export default function LayoffTable({ layoffs, sectorColor, sectorLabels }) {
                 fontSize: '0.65rem',
                 whiteSpace: 'nowrap',
               }}>
-                {h}
+                {h.label}
               </th>
             ))}
           </tr>
@@ -68,13 +75,14 @@ export default function LayoffTable({ layoffs, sectorColor, sectorLabels }) {
               <td style={{ padding: '9px 14px', color: 'var(--text-secondary)' }}>
                 {row.month}
               </td>
-              <td style={{ padding: '9px 14px', color: 'var(--text-muted)', maxWidth: '280px' }}>
+              <td className="col-reason" style={{ padding: '9px 14px', color: 'var(--text-muted)', maxWidth: '280px' }}>
                 {row.reason}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      </div>
     </div>
   )
 }

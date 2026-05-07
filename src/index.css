@@ -45,3 +45,27 @@ html, body {
   background: var(--border-bright);
   border-radius: 3px;
 }
+
+@media (max-width: 600px) {
+  #root {
+    padding: 0 1rem 3rem;
+  }
+
+  .section {
+    margin-top: 2rem !important;
+  }
+
+  header {
+    padding-top: 2rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+
+  .table-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .col-reason {
+    display: none;
+  }
+}

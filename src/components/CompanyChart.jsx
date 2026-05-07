@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 
 const CustomTooltip = ({ active, payload }) => {
@@ -26,6 +26,13 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function CompanyChart({ layoffs, sectorColor, activeSector }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 600)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+
   const filtered = activeSector === 'all'
     ? layoffs
     : layoffs.filter(l => l.sector === activeSector)
@@ -50,7 +57,7 @@ export default function CompanyChart({ layoffs, sectorColor, activeSector }) {
         <YAxis
           type="category"
           dataKey="company"
-          width={160}
+          width={isMobile ? 100 : 160}
           tick={{ fontFamily: 'Space Mono, monospace', fontSize: 11, fill: '#8a8784' }}
           axisLine={false}
           tickLine={false}

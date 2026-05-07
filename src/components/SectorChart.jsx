@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 
 const CustomTooltip = ({ active, payload }) => {
@@ -22,6 +22,13 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function SectorChart({ sectors }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 600)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
+
   const sorted = [...sectors].sort((a, b) => b.jobs - a.jobs)
 
   return (
@@ -41,7 +48,7 @@ export default function SectorChart({ sectors }) {
         <YAxis
           type="category"
           dataKey="label"
-          width={175}
+          width={isMobile ? 120 : 175}
           tick={{ fontFamily: 'Space Mono, monospace', fontSize: 11, fill: '#8a8784' }}
           axisLine={false}
           tickLine={false}

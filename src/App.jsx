@@ -59,17 +59,17 @@ export default function App() {
 
       <SummaryStats summary={data.summary} computed={computed} />
 
-      <section style={{ marginTop: '3rem' }}>
+      <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by sector</SectionLabel>
         <SectorChart sectors={sectorsWithActual} />
       </section>
 
-      <section style={{ marginTop: '3rem' }}>
+      <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by company</SectionLabel>
         <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} />
       </section>
 
-      <section style={{ marginTop: '3rem' }}>
+      <section className="section" style={{ marginTop: '3rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
           <SectionLabel style={{ margin: 0 }}>All layoffs</SectionLabel>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
