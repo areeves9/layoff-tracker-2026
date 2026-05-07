@@ -15,6 +15,17 @@ export default function App() {
 
   const sectors = ['all', ...data.sectors.map(s => s.sector)]
 
+  const computed = useMemo(() => {
+    const totalJobs = data.layoffs.reduce((s, r) => s + r.jobs, 0)
+    const totalCompanies = data.layoffs.length
+    const techJobs = data.layoffs.filter(r => r.sector === 'tech').reduce((s, r) => s + r.jobs, 0)
+    const sectorTotals = {}
+    data.layoffs.forEach(r => { sectorTotals[r.sector] = (sectorTotals[r.sector] || 0) + r.jobs })
+    return { totalJobs, totalCompanies, techJobs, sectorTotals }
+  }, [])
+
+  const sectorsWithActual = data.sectors.map(s => ({ ...s, jobs: computed.sectorTotals[s.sector] || 0 }))
+
   const filtered = useMemo(() => {
     let rows = [...data.layoffs]
     if (activeSector !== 'all') {
@@ -46,11 +57,11 @@ export default function App() {
         </p>
       </header>
 
-      <SummaryStats summary={data.summary} />
+      <SummaryStats summary={data.summary} computed={computed} />
 
       <section style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by sector</SectionLabel>
-        <SectorChart sectors={data.sectors} />
+        <SectorChart sectors={sectorsWithActual} />
       </section>
 
       <section style={{ marginTop: '3rem' }}>

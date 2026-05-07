@@ -1,11 +1,11 @@
 import React from 'react'
 
-export default function SummaryStats({ summary }) {
+export default function SummaryStats({ summary, computed }) {
   const stats = [
-    { label: 'Total jobs tracked', value: summary.total_jobs_tracked.toLocaleString() + '+' },
-    { label: 'Tech jobs cut', value: summary.tech_jobs_cut.toLocaleString() },
-    { label: 'Daily pace', value: summary.daily_rate.toLocaleString() + '/day' },
-    { label: 'Companies cutting', value: summary.companies_cutting.toLocaleString() + '+' },
+    { label: 'Jobs tracked', value: computed.totalJobs.toLocaleString() },
+    { label: 'Companies tracked', value: computed.totalCompanies.toLocaleString() },
+    { label: 'Tech jobs cut', value: computed.techJobs.toLocaleString() },
+    { label: 'Daily pace (est.)', value: summary.daily_rate.toLocaleString() + '/day' },
     { label: 'Jan YoY increase', value: '+' + summary.jan_yoy_increase_pct + '%' },
     { label: 'Employers planning cuts', value: summary.employers_planning_cuts_pct + '%' },
   ]
