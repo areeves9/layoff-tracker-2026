@@ -1,0 +1,65 @@
+{
+  "meta": {
+    "title": "2026 Mass Layoff Tracker",
+    "description": "A running tally of major layoffs across all industries in 2026.",
+    "last_updated": "2026-05-07",
+    "sources": [
+      "https://layoffhedge.com/company/",
+      "https://intellizence.com/insights/layoff-downsizing/major-companies-that-announced-mass-layoffs/",
+      "https://www.trueup.io/layoffs",
+      "https://layoffalert.org/layoffs-2026",
+      "https://www.cheapism.com/2026-layoffs-major-american-companies/"
+    ]
+  },
+  "summary": {
+    "total_jobs_tracked": 358000,
+    "total_companies": 110,
+    "tech_jobs_cut": 121111,
+    "daily_rate": 961,
+    "companies_cutting": 1621,
+    "jan_yoy_increase_pct": 118,
+    "employers_planning_cuts_pct": 58
+  },
+  "layoffs": [
+    { "company": "Oracle",           "jobs": 30000, "sector": "tech",    "month": "March",    "reason": "AI datacenter buildout" },
+    { "company": "Citigroup",        "jobs": 20000, "sector": "finance", "month": "Ongoing",  "reason": "Restructuring / cost reduction" },
+    { "company": "HSBC",             "jobs": 20000, "sector": "finance", "month": "March",    "reason": "Restructuring" },
+    { "company": "Amazon",           "jobs": 16000, "sector": "tech",    "month": "January",  "reason": "Reducing bureaucracy" },
+    { "company": "Intel",            "jobs": 15000, "sector": "tech",    "month": "April",    "reason": "Cost reduction / cancelled fab projects" },
+    { "company": "Accenture",        "jobs": 11000, "sector": "other",   "month": "Ongoing",  "reason": "AI-focused restructuring" },
+    { "company": "Dell",             "jobs": 11000, "sector": "tech",    "month": "Ongoing",  "reason": "Shift to AI server business" },
+    { "company": "Chevron",          "jobs": 8000,  "sector": "energy",  "month": "Ongoing",  "reason": "Cost reduction / acquisition" },
+    { "company": "Meta",             "jobs": 8000,  "sector": "tech",    "month": "April",    "reason": "Efficiency / AI investment offset" },
+    { "company": "Microsoft",        "jobs": 8750,  "sector": "tech",    "month": "April",    "reason": "Buyouts / AI investment offset" },
+    { "company": "Heineken",         "jobs": 6000,  "sector": "retail",  "month": "Ongoing",  "reason": "Subdued consumer sentiment" },
+    { "company": "Telefonica",       "jobs": 6000,  "sector": "other",   "month": "Ongoing",  "reason": "Cost reduction" },
+    { "company": "Dow Chemical",     "jobs": 4500,  "sector": "energy",  "month": "Ongoing",  "reason": "AI and automation shift" },
+    { "company": "Block",            "jobs": 4000,  "sector": "finance", "month": "February", "reason": "Restructuring" },
+    { "company": "Cognizant",        "jobs": 4000,  "sector": "tech",    "month": "May",      "reason": "AI capabilities / Project Leap" },
+    { "company": "Disney",           "jobs": 1800,  "sector": "other",   "month": "Ongoing",  "reason": "Cost reduction / media shift" },
+    { "company": "ASML",             "jobs": 1700,  "sector": "tech",    "month": "January",  "reason": "Chip demand forecasting" },
+    { "company": "Atlassian",        "jobs": 1600,  "sector": "tech",    "month": "March",    "reason": "AI investment / org reshape" },
+    { "company": "Mastercard",       "jobs": 1400,  "sector": "finance", "month": "January",  "reason": "Restructuring" },
+    { "company": "Capital One",      "jobs": 1100,  "sector": "finance", "month": "March",    "reason": "Workforce rebalancing" },
+    { "company": "Macy's",           "jobs": 1000,  "sector": "retail",  "month": "March",    "reason": "Store restructuring" },
+    { "company": "Snap",             "jobs": 1000,  "sector": "tech",    "month": "April",    "reason": "AI reducing repetitive work" },
+    { "company": "Salesforce",       "jobs": 1000,  "sector": "tech",    "month": "April",    "reason": "AI / efficiency" },
+    { "company": "Panasonic",        "jobs": 2000,  "sector": "tech",    "month": "February", "reason": "Ongoing restructuring" },
+    { "company": "Cigna",            "jobs": 2000,  "sector": "health",  "month": "February", "reason": "Efficiency initiative" },
+    { "company": "Peloton",          "jobs": 900,   "sector": "retail",  "month": "Ongoing",  "reason": "Cost reduction / declining sales" },
+    { "company": "Pinterest",        "jobs": 900,   "sector": "tech",    "month": "Ongoing",  "reason": "AI-forward restructuring" },
+    { "company": "eBay",             "jobs": 800,   "sector": "tech",    "month": "Ongoing",  "reason": "Streamlining operations" },
+    { "company": "Kenvue",           "jobs": 700,   "sector": "health",  "month": "Ongoing",  "reason": "Workforce reduction 3.5%" },
+    { "company": "Coinbase",         "jobs": 700,   "sector": "finance", "month": "May",      "reason": "AI-native restructuring" },
+    { "company": "GoPro",            "jobs": 600,   "sector": "tech",    "month": "April",    "reason": "Cost reduction" },
+    { "company": "Freshworks",       "jobs": 500,   "sector": "tech",    "month": "May",      "reason": "AI-led restructuring" }
+  ],
+  "sectors": [
+    { "sector": "tech",    "label": "Tech / Software",         "estimated_jobs": 95000,  "color": "#3266ad" },
+    { "sector": "finance", "label": "Finance / Fintech",       "estimated_jobs": 45000,  "color": "#8e44ad" },
+    { "sector": "energy",  "label": "Energy / Industrial",     "estimated_jobs": 25000,  "color": "#16a085" },
+    { "sector": "other",   "label": "Media / Consulting / Other","estimated_jobs": 22000, "color": "#73726c" },
+    { "sector": "retail",  "label": "Retail / Consumer",       "estimated_jobs": 18000,  "color": "#c0392b" },
+    { "sector": "health",  "label": "Healthcare / Pharma",     "estimated_jobs": 12000,  "color": "#e67e22" }
+  ]
+}
