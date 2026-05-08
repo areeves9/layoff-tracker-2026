@@ -56,7 +56,16 @@
     { "company": "Merck",            "jobs": 6000,  "sector": "biotech", "month": "March",    "reason": "Cost savings / $3B target by 2027" },
     { "company": "Evotec",           "jobs": 800,   "sector": "biotech", "month": "January",  "reason": "Restructuring / 4 site closures" },
     { "company": "Takeda",           "jobs": 634,   "sector": "biotech", "month": "February", "reason": "Restructuring / $1.26B annual savings target" },
-    { "company": "Novartis",         "jobs": 599,   "sector": "biotech", "month": "March",    "reason": "East Hanover site restructuring" }
+    { "company": "Novartis",         "jobs": 599,   "sector": "biotech", "month": "March",    "reason": "East Hanover site restructuring" },
+    { "company": "SAP",              "jobs": 3000,  "sector": "tech",    "month": "January",  "reason": "Portfolio streamlining / AI shift" },
+    { "company": "IBM",              "jobs": 2700,  "sector": "tech",    "month": "February", "reason": "AI-driven restructuring" },
+    { "company": "Epic Games",       "jobs": 1000,  "sector": "tech",    "month": "March",    "reason": "Cost reduction / restructuring" },
+    { "company": "Morgan Stanley",   "jobs": 2500,  "sector": "finance", "month": "March",    "reason": "Workforce restructuring (3% of staff)" },
+    { "company": "Nike",             "jobs": 2175,  "sector": "retail",  "month": "January",  "reason": "Supply chain automation / tech restructuring (2 rounds)" },
+    { "company": "Target",           "jobs": 500,   "sector": "retail",  "month": "March",    "reason": "Distribution and corporate restructuring" },
+    { "company": "Claire's",         "jobs": 1300,  "sector": "retail",  "month": "April",    "reason": "Retail restructuring" },
+    { "company": "Washington Post",  "jobs": 400,   "sector": "other",   "month": "February", "reason": "Ownership restructuring / digital shift" },
+    { "company": "Boeing",           "jobs": 300,   "sector": "other",   "month": "February", "reason": "Defense division restructuring" }
   ],
   "sectors": [
     { "sector": "tech",    "label": "Tech / Software",         "estimated_jobs": 95000,  "color": "#3266ad" },
