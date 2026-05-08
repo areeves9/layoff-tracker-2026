@@ -87,72 +87,55 @@ export default function App() {
       </section>
 
       <section className="section" style={{ marginTop: '3rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
-          <SectionLabel style={{ margin: 0 }}>All layoffs</SectionLabel>
-          <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
+        <div className="table-controls">
+          <div className="table-controls-top">
+            <SectionLabel style={{ margin: 0 }}>All layoffs</SectionLabel>
+            <div className="sort-group">
+              <span className="ctrl-label">SORT:</span>
+              {['jobs', 'alpha'].map(s => (
+                <button
+                  key={s}
+                  className="ctrl-btn"
+                  onClick={() => setSortBy(s)}
+                  style={{
+                    border: `1px solid ${sortBy === s ? 'var(--border-bright)' : 'var(--border)'}`,
+                    background: sortBy === s ? 'var(--surface-2)' : 'transparent',
+                    color: sortBy === s ? 'var(--text-primary)' : 'var(--text-muted)',
+                  }}
+                >
+                  {s === 'jobs' ? '# Jobs' : 'A→Z'}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div className="table-controls-bottom">
             <input
               type="text"
+              className="search-input"
               placeholder="Search companies..."
               value={search}
               onChange={e => setSearch(e.target.value)}
-              style={{
-                fontFamily: 'var(--font-mono)',
-                fontSize: '0.7rem',
-                padding: '3px 10px',
-                border: '1px solid var(--border)',
-                borderRadius: '3px',
-                background: 'transparent',
-                color: 'var(--text-primary)',
-                outline: 'none',
-                width: '160px',
-              }}
+              style={{ border: '1px solid var(--border)' }}
               onFocus={e => e.target.style.borderColor = 'var(--border-bright)'}
               onBlur={e => e.target.style.borderColor = 'var(--border)'}
             />
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginLeft: '4px' }}>FILTER:</span>
-            {sectors.map(s => (
-              <button
-                key={s}
-                onClick={() => setActiveSector(s)}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.7rem',
-                  padding: '3px 10px',
-                  border: `1px solid ${activeSector === s ? 'var(--border-bright)' : 'var(--border)'}`,
-                  borderRadius: '3px',
-                  background: activeSector === s ? 'var(--surface-2)' : 'transparent',
-                  color: activeSector === s ? 'var(--text-primary)' : 'var(--text-muted)',
-                  cursor: 'pointer',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  transition: 'all 0.15s',
-                }}
-              >
-                {s === 'all' ? 'All' : SECTOR_LABELS[s]?.split('/')[0].trim()}
-              </button>
-            ))}
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginLeft: '8px' }}>SORT:</span>
-            {['jobs', 'alpha'].map(s => (
-              <button
-                key={s}
-                onClick={() => setSortBy(s)}
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.7rem',
-                  padding: '3px 10px',
-                  border: `1px solid ${sortBy === s ? 'var(--border-bright)' : 'var(--border)'}`,
-                  borderRadius: '3px',
-                  background: sortBy === s ? 'var(--surface-2)' : 'transparent',
-                  color: sortBy === s ? 'var(--text-primary)' : 'var(--text-muted)',
-                  cursor: 'pointer',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.05em',
-                  transition: 'all 0.15s',
-                }}
-              >
-                {s === 'jobs' ? '# Jobs' : 'A→Z'}
-              </button>
-            ))}
+            <div className="filter-group">
+              <span className="ctrl-label">FILTER:</span>
+              {sectors.map(s => (
+                <button
+                  key={s}
+                  className="ctrl-btn"
+                  onClick={() => setActiveSector(s)}
+                  style={{
+                    border: `1px solid ${activeSector === s ? 'var(--border-bright)' : 'var(--border)'}`,
+                    background: activeSector === s ? 'var(--surface-2)' : 'transparent',
+                    color: activeSector === s ? 'var(--text-primary)' : 'var(--text-muted)',
+                  }}
+                >
+                  {s === 'all' ? 'All' : SECTOR_LABELS[s]?.split('/')[0].trim()}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
         <LayoffTable layoffs={filtered} sectorColor={sectorColor} sectorLabels={SECTOR_LABELS} />
@@ -173,7 +156,7 @@ function SectionLabel({ children, style = {} }) {
   return (
     <p style={{
       fontFamily: 'var(--font-mono)',
-      fontSize: '0.72rem',
+      fontSize: '0.75rem',
       fontWeight: 700,
       color: 'var(--text-muted)',
       textTransform: 'uppercase',

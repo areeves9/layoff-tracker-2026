@@ -37,8 +37,10 @@ export default function CompanyChart({ layoffs, sectorColor, activeSector, onSel
     ? layoffs
     : layoffs.filter(l => l.sector === activeSector)
 
-  const sorted = [...filtered].sort((a, b) => b.jobs - a.jobs).slice(0, 30)
-  const chartHeight = Math.max(300, sorted.length * 28 + 40)
+  const limit = isMobile ? 15 : 30
+  const barH = isMobile ? 22 : 28
+  const sorted = [...filtered].sort((a, b) => b.jobs - a.jobs).slice(0, limit)
+  const chartHeight = Math.max(260, sorted.length * barH + 40)
 
   return (
     <ResponsiveContainer width="100%" height={chartHeight}>
@@ -63,7 +65,7 @@ export default function CompanyChart({ layoffs, sectorColor, activeSector, onSel
           tickLine={false}
         />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.03)' }} />
-        <Bar dataKey="jobs" radius={[0, 3, 3, 0]} barSize={16} onClick={d => onSelect(d)} style={{ cursor: 'pointer' }}>
+        <Bar dataKey="jobs" radius={[0, 3, 3, 0]} barSize={isMobile ? 12 : 16} onClick={d => onSelect(d)} style={{ cursor: 'pointer' }}>
           {sorted.map((entry, i) => (
             <Cell
               key={i}

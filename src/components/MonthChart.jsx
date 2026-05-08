@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts'
 
 const MONTH_ORDER = ['January', 'February', 'March', 'April', 'May', 'Ongoing']
@@ -27,6 +27,12 @@ const CustomTooltip = ({ active, payload }) => {
 }
 
 export default function MonthChart({ layoffs }) {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
+  useEffect(() => {
+    const handler = () => setIsMobile(window.innerWidth < 600)
+    window.addEventListener('resize', handler)
+    return () => window.removeEventListener('resize', handler)
+  }, [])
   const byMonth = {}
   layoffs.forEach(r => {
     byMonth[r.month] = (byMonth[r.month] || 0) + r.jobs
@@ -54,7 +60,7 @@ export default function MonthChart({ layoffs }) {
           width={36}
         />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.03)' }} />
-        <Bar dataKey="jobs" radius={[3, 3, 0, 0]} barSize={32}>
+        <Bar dataKey="jobs" radius={[3, 3, 0, 0]} barSize={isMobile ? 20 : 32}>
           {data.map((entry, i) => (
             <Cell
               key={i}

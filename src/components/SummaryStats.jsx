@@ -28,7 +28,7 @@ export default function SummaryStats({ summary, computed }) {
         }}>
           <p style={{
             fontFamily: 'var(--font-mono)',
-            fontSize: '0.68rem',
+            fontSize: '0.75rem',
             color: 'var(--text-muted)',
             textTransform: 'uppercase',
             letterSpacing: '0.08em',
@@ -36,7 +36,7 @@ export default function SummaryStats({ summary, computed }) {
           }}>
             {s.label}
           </p>
-          <p style={{
+          <p className="stat-value" style={{
             fontFamily: 'var(--font-mono)',
             fontSize: '1.4rem',
             fontWeight: 700,
