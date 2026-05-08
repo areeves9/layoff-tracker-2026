@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+
+  <!-- subtle grid lines -->
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="300" y1="0" x2="300" y2="630" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+  <line x1="900" y1="0" x2="900" y2="630" stroke="rgba(255,255,255,0.05)" stroke-width="1"/>
+
+  <!-- descending bar chart decoration -->
+  <rect x="680" y="140" width="80" height="350" rx="4" fill="#e84040" opacity="0.15"/>
+  <rect x="800" y="210" width="80" height="280" rx="4" fill="#e84040" opacity="0.12"/>
+  <rect x="920" y="280" width="80" height="210" rx="4" fill="#e84040" opacity="0.09"/>
+  <rect x="1040" y="350" width="80" height="140" rx="4" fill="#e84040" opacity="0.06"/>
+
+  <!-- accent bar -->
+  <rect x="80" y="490" width="480" height="2" fill="#e84040" opacity="0.4"/>
+
+  <!-- title -->
+  <text x="80" y="260" font-family="monospace" font-size="80" font-weight="700" fill="#e84040" letter-spacing="-2">LAYOFF</text>
+  <text x="80" y="360" font-family="monospace" font-size="80" font-weight="700" fill="#f0ede8" letter-spacing="-2">TRACKER</text>
+
+  <!-- subtitle -->
+  <text x="82" y="430" font-family="monospace" font-size="28" fill="#686563" letter-spacing="2">2026 — LIVE SNAPSHOT</text>
+
+  <!-- stats -->
+  <text x="82" y="530" font-family="monospace" font-size="22" fill="#8a8784">213,000+ jobs tracked across 45 companies</text>
+</svg>
