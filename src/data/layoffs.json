@@ -52,7 +52,11 @@
     { "company": "Kenvue",           "jobs": 700,   "sector": "health",  "month": "Ongoing",  "reason": "Workforce reduction 3.5%" },
     { "company": "Coinbase",         "jobs": 700,   "sector": "finance", "month": "May",      "reason": "AI-native restructuring" },
     { "company": "GoPro",            "jobs": 600,   "sector": "tech",    "month": "April",    "reason": "Cost reduction" },
-    { "company": "Freshworks",       "jobs": 500,   "sector": "tech",    "month": "May",      "reason": "AI-led restructuring" }
+    { "company": "Freshworks",       "jobs": 500,   "sector": "tech",    "month": "May",      "reason": "AI-led restructuring" },
+    { "company": "Merck",            "jobs": 6000,  "sector": "biotech", "month": "March",    "reason": "Cost savings / $3B target by 2027" },
+    { "company": "Evotec",           "jobs": 800,   "sector": "biotech", "month": "January",  "reason": "Restructuring / 4 site closures" },
+    { "company": "Takeda",           "jobs": 634,   "sector": "biotech", "month": "February", "reason": "Restructuring / $1.26B annual savings target" },
+    { "company": "Novartis",         "jobs": 599,   "sector": "biotech", "month": "March",    "reason": "East Hanover site restructuring" }
   ],
   "sectors": [
     { "sector": "tech",    "label": "Tech / Software",         "estimated_jobs": 95000,  "color": "#3266ad" },
@@ -60,6 +64,7 @@
     { "sector": "energy",  "label": "Energy / Industrial",     "estimated_jobs": 25000,  "color": "#16a085" },
     { "sector": "other",   "label": "Media / Consulting / Other","estimated_jobs": 22000, "color": "#73726c" },
     { "sector": "retail",  "label": "Retail / Consumer",       "estimated_jobs": 18000,  "color": "#c0392b" },
-    { "sector": "health",  "label": "Healthcare / Pharma",     "estimated_jobs": 12000,  "color": "#e67e22" }
+    { "sector": "health",  "label": "Healthcare / Pharma",     "estimated_jobs": 12000,  "color": "#e67e22" },
+    { "sector": "biotech", "label": "Biotech / Biopharma",     "estimated_jobs": 0,      "color": "#27ae60" }
   ]
 }
