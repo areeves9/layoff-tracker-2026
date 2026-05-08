@@ -1,11 +1,16 @@
-import React, { useState, useMemo } from 'react'
+import React, { useState, useMemo, lazy, Suspense } from 'react'
 import data from './data/layoffs.json'
-import CompanyChart from './components/CompanyChart.jsx'
-import SectorChart from './components/SectorChart.jsx'
-import MonthChart from './components/MonthChart.jsx'
-import CompanyDonut from './components/CompanyDonut.jsx'
 import LayoffTable from './components/LayoffTable.jsx'
 import SummaryStats from './components/SummaryStats.jsx'
+
+const CompanyChart = lazy(() => import('./components/CompanyChart.jsx'))
+const SectorChart  = lazy(() => import('./components/SectorChart.jsx'))
+const MonthChart   = lazy(() => import('./components/MonthChart.jsx'))
+const CompanyDonut = lazy(() => import('./components/CompanyDonut.jsx'))
+
+function ChartPlaceholder({ height = 220 }) {
+  return <div style={{ height, background: 'var(--surface)', borderRadius: '4px', opacity: 0.4 }} />
+}
 
 const SECTOR_LABELS = Object.fromEntries(
   data.sectors.map(s => [s.sector, s.label])
@@ -47,7 +52,9 @@ export default function App() {
 
   return (
     <div>
-      <CompanyDonut company={selectedCompany} onClose={() => setSelectedCompany(null)} sectorColor={sectorColor} />
+      <Suspense fallback={null}>
+        <CompanyDonut company={selectedCompany} onClose={() => setSelectedCompany(null)} sectorColor={sectorColor} />
+      </Suspense>
       <header style={{ padding: '3rem 0 2rem', borderBottom: '1px solid var(--border)' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
           <h1 style={{ fontFamily: 'var(--font-mono)', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--accent)' }}>
@@ -70,17 +77,23 @@ export default function App() {
 
       <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by sector</SectionLabel>
-        <SectorChart sectors={sectorsWithActual} />
+        <Suspense fallback={<ChartPlaceholder height={220} />}>
+          <SectorChart sectors={sectorsWithActual} />
+        </Suspense>
       </section>
 
       <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by month</SectionLabel>
-        <MonthChart layoffs={data.layoffs} />
+        <Suspense fallback={<ChartPlaceholder height={200} />}>
+          <MonthChart layoffs={data.layoffs} />
+        </Suspense>
       </section>
 
       <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by company</SectionLabel>
-        <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} onSelect={setSelectedCompany} />
+        <Suspense fallback={<ChartPlaceholder height={460} />}>
+          <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} onSelect={setSelectedCompany} />
+        </Suspense>
         <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.6rem' }}>
           Click a bar to see workforce breakdown
         </p>
