@@ -3,6 +3,7 @@ import data from './data/layoffs.json'
 import CompanyChart from './components/CompanyChart.jsx'
 import SectorChart from './components/SectorChart.jsx'
 import MonthChart from './components/MonthChart.jsx'
+import CompanyDonut from './components/CompanyDonut.jsx'
 import LayoffTable from './components/LayoffTable.jsx'
 import SummaryStats from './components/SummaryStats.jsx'
 
@@ -14,6 +15,7 @@ export default function App() {
   const [activeSector, setActiveSector] = useState('all')
   const [sortBy, setSortBy] = useState('jobs')
   const [search, setSearch] = useState('')
+  const [selectedCompany, setSelectedCompany] = useState(null)
 
   const sectors = ['all', ...data.sectors.map(s => s.sector)]
 
@@ -45,6 +47,7 @@ export default function App() {
 
   return (
     <div>
+      <CompanyDonut company={selectedCompany} onClose={() => setSelectedCompany(null)} sectorColor={sectorColor} />
       <header style={{ padding: '3rem 0 2rem', borderBottom: '1px solid var(--border)' }}>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: '1rem', flexWrap: 'wrap', marginBottom: '0.5rem' }}>
           <h1 style={{ fontFamily: 'var(--font-mono)', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--accent)' }}>
@@ -77,7 +80,10 @@ export default function App() {
 
       <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by company</SectionLabel>
-        <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} />
+        <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} onSelect={setSelectedCompany} />
+        <p style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--text-muted)', marginTop: '0.6rem' }}>
+          Click a bar to see workforce breakdown
+        </p>
       </section>
 
       <section className="section" style={{ marginTop: '3rem' }}>

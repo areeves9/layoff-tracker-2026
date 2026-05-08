@@ -25,7 +25,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null
 }
 
-export default function CompanyChart({ layoffs, sectorColor, activeSector }) {
+export default function CompanyChart({ layoffs, sectorColor, activeSector, onSelect }) {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 600)
   useEffect(() => {
     const handler = () => setIsMobile(window.innerWidth < 600)
@@ -63,7 +63,7 @@ export default function CompanyChart({ layoffs, sectorColor, activeSector }) {
           tickLine={false}
         />
         <Tooltip content={<CustomTooltip />} cursor={{ fill: 'rgba(255,255,255,0.03)' }} />
-        <Bar dataKey="jobs" radius={[0, 3, 3, 0]} barSize={16}>
+        <Bar dataKey="jobs" radius={[0, 3, 3, 0]} barSize={16} onClick={d => onSelect(d)} style={{ cursor: 'pointer' }}>
           {sorted.map((entry, i) => (
             <Cell
               key={i}
