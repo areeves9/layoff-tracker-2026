@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react'
 import data from './data/layoffs.json'
 import CompanyChart from './components/CompanyChart.jsx'
 import SectorChart from './components/SectorChart.jsx'
+import MonthChart from './components/MonthChart.jsx'
 import LayoffTable from './components/LayoffTable.jsx'
 import SummaryStats from './components/SummaryStats.jsx'
 
@@ -12,6 +13,7 @@ const SECTOR_LABELS = Object.fromEntries(
 export default function App() {
   const [activeSector, setActiveSector] = useState('all')
   const [sortBy, setSortBy] = useState('jobs')
+  const [search, setSearch] = useState('')
 
   const sectors = ['all', ...data.sectors.map(s => s.sector)]
 
@@ -31,9 +33,13 @@ export default function App() {
     if (activeSector !== 'all') {
       rows = rows.filter(r => r.sector === activeSector)
     }
+    if (search.trim()) {
+      const q = search.trim().toLowerCase()
+      rows = rows.filter(r => r.company.toLowerCase().includes(q))
+    }
     rows.sort((a, b) => sortBy === 'jobs' ? b.jobs - a.jobs : a.company.localeCompare(b.company))
     return rows
-  }, [activeSector, sortBy])
+  }, [activeSector, sortBy, search])
 
   const sectorColor = Object.fromEntries(data.sectors.map(s => [s.sector, s.color]))
 
@@ -65,6 +71,11 @@ export default function App() {
       </section>
 
       <section className="section" style={{ marginTop: '3rem' }}>
+        <SectionLabel>Jobs cut by month</SectionLabel>
+        <MonthChart layoffs={data.layoffs} />
+      </section>
+
+      <section className="section" style={{ marginTop: '3rem' }}>
         <SectionLabel>Jobs cut by company</SectionLabel>
         <CompanyChart layoffs={data.layoffs} sectorColor={sectorColor} activeSector={activeSector} />
       </section>
@@ -73,7 +84,26 @@ export default function App() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
           <SectionLabel style={{ margin: 0 }}>All layoffs</SectionLabel>
           <div style={{ display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>FILTER:</span>
+            <input
+              type="text"
+              placeholder="Search companies..."
+              value={search}
+              onChange={e => setSearch(e.target.value)}
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.7rem',
+                padding: '3px 10px',
+                border: '1px solid var(--border)',
+                borderRadius: '3px',
+                background: 'transparent',
+                color: 'var(--text-primary)',
+                outline: 'none',
+                width: '160px',
+              }}
+              onFocus={e => e.target.style.borderColor = 'var(--border-bright)'}
+              onBlur={e => e.target.style.borderColor = 'var(--border)'}
+            />
+            <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)', marginLeft: '4px' }}>FILTER:</span>
             {sectors.map(s => (
               <button
                 key={s}
