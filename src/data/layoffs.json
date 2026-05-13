@@ -2,7 +2,7 @@
   "meta": {
     "title": "2026 Mass Layoff Tracker",
     "description": "A running tally of major layoffs across all industries in 2026.",
-    "last_updated": "2026-05-08",
+    "last_updated": "2026-05-13",
     "sources": [
       "https://layoffhedge.com/company/",
       "https://intellizence.com/insights/layoff-downsizing/major-companies-that-announced-mass-layoffs/",
@@ -12,9 +12,9 @@
     ]
   },
   "summary": {
-    "total_jobs_tracked": 358000,
-    "total_companies": 110,
-    "tech_jobs_cut": 121111,
+    "total_jobs_tracked": 372339,
+    "total_companies": 118,
+    "tech_jobs_cut": 122211,
     "daily_rate": 961,
     "companies_cutting": 1621,
     "jan_yoy_increase_pct": 118,
@@ -65,7 +65,15 @@
     { "company": "Target",          "jobs": 500,   "workforce": 440000,  "sector": "retail",  "month": "March",    "reason": "Distribution and corporate restructuring" },
     { "company": "Claire's",        "jobs": 1300,  "workforce": 17000,   "sector": "retail",  "month": "April",    "reason": "Retail restructuring" },
     { "company": "Washington Post", "jobs": 400,   "workforce": 2500,    "sector": "other",   "month": "February", "reason": "Ownership restructuring / digital shift" },
-    { "company": "Boeing",          "jobs": 300,   "workforce": 172000,  "sector": "other",   "month": "February", "reason": "Defense division restructuring" }
+    { "company": "Boeing",          "jobs": 300,   "workforce": 172000,  "sector": "other",   "month": "February", "reason": "Defense division restructuring" },
+    { "company": "Cloudflare",      "jobs": 1100,  "workforce": 5500,    "sector": "tech",    "month": "May",      "reason": "AI-driven restructuring; internal AI usage up 600%, rendering roles obsolete" },
+    { "company": "PayPal",          "jobs": 4760,  "workforce": 23800,   "sector": "finance", "month": "May",      "reason": "AI adoption acceleration; cost restructuring" },
+    { "company": "Ericsson",        "jobs": 1900,  "workforce": 105000,  "sector": "other",   "month": "January",  "reason": "Declining 5G infrastructure demand; competitive pressure" },
+    { "company": "BioNTech",        "jobs": 1860,  "workforce": 8455,    "sector": "biotech", "month": "May",      "reason": "COVID-19 vaccine sales collapse (-35% YoY); strategic shift to oncology" },
+    { "company": "Zalando",         "jobs": 2700,  "workforce": 20000,   "sector": "retail",  "month": "March",    "reason": "Distribution center closure in Erfurt; operational optimization" },
+    { "company": "Saks Global",     "jobs": 795,   "workforce": 4000,    "sector": "retail",  "month": "April",    "reason": "Chapter 11 bankruptcy restructuring; profitable operations focus" },
+    { "company": "Replimune",       "jobs": 224,   "workforce": 370,     "sector": "biotech", "month": "April",    "reason": "FDA rejection of melanoma immunotherapy; 60% of workforce cut" },
+    { "company": "Algoma Steel",    "jobs": 1000,  "workforce": 3000,    "sector": "energy",  "month": "March",    "reason": "U.S. tariffs; accelerated Electric Arc Furnace transition" }
   ],
   "sectors": [
     { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 95000, "color": "#3266ad" },
@@ -74,6 +82,6 @@
     { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 22000, "color": "#73726c" },
     { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 18000, "color": "#c0392b" },
     { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 12000, "color": "#e67e22" },
-    { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 0,     "color": "#27ae60" }
+    { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 10117, "color": "#27ae60" }
   ]
 }
