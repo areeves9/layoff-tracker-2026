@@ -12,10 +12,10 @@
     ]
   },
   "summary": {
-    "total_jobs_tracked": 372339,
-    "total_companies": 118,
-    "tech_jobs_cut": 122211,
-    "daily_rate": 961,
+    "total_jobs_tracked": 228197,
+    "total_companies": 53,
+    "tech_jobs_cut": 110650,
+    "daily_rate": 1715,
     "companies_cutting": 1621,
     "jan_yoy_increase_pct": 118,
     "employers_planning_cuts_pct": 58
@@ -76,12 +76,12 @@
     { "company": "Algoma Steel",    "jobs": 1000,  "workforce": 3000,    "sector": "energy",  "month": "March",    "reason": "U.S. tariffs; accelerated Electric Arc Furnace transition" }
   ],
   "sectors": [
-    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 95000, "color": "#3266ad" },
-    { "sector": "finance", "label": "Finance / Fintech",          "estimated_jobs": 45000, "color": "#8e44ad" },
-    { "sector": "energy",  "label": "Energy / Industrial",        "estimated_jobs": 25000, "color": "#16a085" },
-    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 22000, "color": "#73726c" },
-    { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 18000, "color": "#c0392b" },
-    { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 12000, "color": "#e67e22" },
-    { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 10117, "color": "#27ae60" }
+    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 110650, "color": "#3266ad" },
+    { "sector": "finance", "label": "Finance / Fintech",          "estimated_jobs": 54460,  "color": "#8e44ad" },
+    { "sector": "energy",  "label": "Energy / Industrial",        "estimated_jobs": 13500,  "color": "#16a085" },
+    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 21400,  "color": "#73726c" },
+    { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 15370,  "color": "#c0392b" },
+    { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 2700,   "color": "#e67e22" },
+    { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 10117,  "color": "#27ae60" }
   ]
 }
