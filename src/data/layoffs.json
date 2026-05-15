@@ -2,7 +2,7 @@
   "meta": {
     "title": "2026 Mass Layoff Tracker",
     "description": "A running tally of major layoffs across all industries in 2026.",
-    "last_updated": "2026-05-13",
+    "last_updated": "2026-05-15",
     "sources": [
       "https://layoffhedge.com/company/",
       "https://intellizence.com/insights/layoff-downsizing/major-companies-that-announced-mass-layoffs/",
@@ -12,10 +12,10 @@
     ]
   },
   "summary": {
-    "total_jobs_tracked": 228197,
-    "total_companies": 53,
-    "tech_jobs_cut": 110650,
-    "daily_rate": 1715,
+    "total_jobs_tracked": 244717,
+    "total_companies": 58,
+    "tech_jobs_cut": 111670,
+    "daily_rate": 1813,
     "companies_cutting": 1621,
     "jan_yoy_increase_pct": 118,
     "employers_planning_cuts_pct": 58
@@ -73,13 +73,18 @@
     { "company": "Zalando",         "jobs": 2700,  "workforce": 20000,   "sector": "retail",  "month": "March",    "reason": "Distribution center closure in Erfurt; operational optimization" },
     { "company": "Saks Global",     "jobs": 795,   "workforce": 4000,    "sector": "retail",  "month": "April",    "reason": "Chapter 11 bankruptcy restructuring; profitable operations focus" },
     { "company": "Replimune",       "jobs": 224,   "workforce": 370,     "sector": "biotech", "month": "April",    "reason": "FDA rejection of melanoma immunotherapy; 60% of workforce cut" },
-    { "company": "Algoma Steel",    "jobs": 1000,  "workforce": 3000,    "sector": "energy",  "month": "March",    "reason": "U.S. tariffs; accelerated Electric Arc Furnace transition" }
+    { "company": "Algoma Steel",    "jobs": 1000,  "workforce": 3000,    "sector": "energy",  "month": "March",    "reason": "U.S. tariffs; accelerated Electric Arc Furnace transition" },
+    { "company": "Spirit Airlines", "jobs": 14000, "workforce": 14000,   "sector": "other",   "month": "May",      "reason": "Full shutdown after second bankruptcy in 18 months; ceased all operations May 3" },
+    { "company": "LinkedIn",        "jobs": 875,   "workforce": 17000,   "sector": "tech",    "month": "May",      "reason": "AI restructuring across 5 divisions; cuts despite 12% YoY revenue growth" },
+    { "company": "BILL Holdings",   "jobs": 700,   "workforce": 2300,    "sector": "finance", "month": "May",      "reason": "30% workforce cut alongside $1B stock buyback; AI transformation of SMB finance" },
+    { "company": "Fidelity",        "jobs": 800,   "workforce": 80000,   "sector": "finance", "month": "May",      "reason": "Tech team restructuring; abandoning agile squad model for centralized teams" },
+    { "company": "Upwork",          "jobs": 145,   "workforce": 600,     "sector": "tech",    "month": "May",      "reason": "24% workforce cut; AI replacing freelance coordination and internal roles" }
   ],
   "sectors": [
-    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 110650, "color": "#3266ad" },
-    { "sector": "finance", "label": "Finance / Fintech",          "estimated_jobs": 54460,  "color": "#8e44ad" },
+    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 111670, "color": "#3266ad" },
+    { "sector": "finance", "label": "Finance / Fintech",          "estimated_jobs": 55960,  "color": "#8e44ad" },
     { "sector": "energy",  "label": "Energy / Industrial",        "estimated_jobs": 13500,  "color": "#16a085" },
-    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 21400,  "color": "#73726c" },
+    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 35400,  "color": "#73726c" },
     { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 15370,  "color": "#c0392b" },
     { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 2700,   "color": "#e67e22" },
     { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 10117,  "color": "#27ae60" }
