@@ -2,7 +2,7 @@
   "meta": {
     "title": "2026 Mass Layoff Tracker",
     "description": "A running tally of major layoffs across all industries in 2026.",
-    "last_updated": "2026-05-15",
+    "last_updated": "2026-05-21",
     "sources": [
       "https://layoffhedge.com/company/",
       "https://intellizence.com/insights/layoff-downsizing/major-companies-that-announced-mass-layoffs/",
@@ -12,9 +12,9 @@
     ]
   },
   "summary": {
-    "total_jobs_tracked": 244717,
-    "total_companies": 58,
-    "tech_jobs_cut": 111670,
+    "total_jobs_tracked": 256204,
+    "total_companies": 69,
+    "tech_jobs_cut": 119696,
     "daily_rate": 1813,
     "companies_cutting": 1621,
     "jan_yoy_increase_pct": 118,
@@ -29,7 +29,7 @@
     { "company": "Accenture",       "jobs": 11000, "workforce": 733000,  "sector": "other",   "month": "Ongoing",  "reason": "AI-focused restructuring" },
     { "company": "Dell",            "jobs": 11000, "workforce": 120000,  "sector": "tech",    "month": "Ongoing",  "reason": "Shift to AI server business" },
     { "company": "Chevron",         "jobs": 8000,  "workforce": 40000,   "sector": "energy",  "month": "Ongoing",  "reason": "Cost reduction / acquisition" },
-    { "company": "Meta",            "jobs": 8000,  "workforce": 72000,   "sector": "tech",    "month": "April",    "reason": "Efficiency / AI investment offset" },
+    { "company": "Meta",            "jobs": 8000,  "workforce": 72000,   "sector": "tech",    "month": "May",      "reason": "Efficiency / AI investment offset; Reality Labs, Facebook, recruiting, sales" },
     { "company": "Microsoft",       "jobs": 8750,  "workforce": 228000,  "sector": "tech",    "month": "April",    "reason": "Buyouts / AI investment offset" },
     { "company": "Heineken",        "jobs": 6000,  "workforce": 85000,   "sector": "retail",  "month": "Ongoing",  "reason": "Subdued consumer sentiment" },
     { "company": "Telefonica",      "jobs": 6000,  "workforce": 104000,  "sector": "other",   "month": "Ongoing",  "reason": "Cost reduction" },
@@ -78,15 +78,26 @@
     { "company": "LinkedIn",        "jobs": 875,   "workforce": 17000,   "sector": "tech",    "month": "May",      "reason": "AI restructuring across 5 divisions; cuts despite 12% YoY revenue growth" },
     { "company": "BILL Holdings",   "jobs": 700,   "workforce": 2300,    "sector": "finance", "month": "May",      "reason": "30% workforce cut alongside $1B stock buyback; AI transformation of SMB finance" },
     { "company": "Fidelity",        "jobs": 800,   "workforce": 80000,   "sector": "finance", "month": "May",      "reason": "Tech team restructuring; abandoning agile squad model for centralized teams" },
-    { "company": "Upwork",          "jobs": 145,   "workforce": 600,     "sector": "tech",    "month": "May",      "reason": "24% workforce cut; AI replacing freelance coordination and internal roles" }
+    { "company": "Upwork",          "jobs": 145,   "workforce": 600,     "sector": "tech",    "month": "May",      "reason": "24% workforce cut; AI replacing freelance coordination and internal roles" },
+    { "company": "Ticketmaster",    "jobs": 350,   "workforce": 4375,    "sector": "other",   "month": "May",      "reason": "Flattening organizational layers; engineering, product, and design hardest hit" },
+    { "company": "Arctic Wolf",     "jobs": 250,   "workforce": 2500,    "sector": "tech",    "month": "May",      "reason": "Investment shift to Superintelligence platform and Agentic SOC" },
+    { "company": "Verizon",         "jobs": 621,   "workforce": 105000,  "sector": "other",   "month": "May",      "reason": "AI tech stack completion; NJ WARN filing for Basking Ridge HQ" },
+    { "company": "Staffbase",       "jobs": 176,   "workforce": 800,     "sector": "tech",    "month": "May",      "reason": "22% of company; restructuring of enterprise communications platform" },
+    { "company": "General Motors",  "jobs": 550,   "workforce": 165000,  "sector": "other",   "month": "May",      "reason": "IT department cuts >10%; skills shift toward AI-native dev, data engineering, cloud" },
+    { "company": "ZoomInfo",        "jobs": 600,   "workforce": 3000,    "sector": "tech",    "month": "May",      "reason": "20% of workforce; closing Israel R&D center; cuts in US, India, UK" },
+    { "company": "Walmart",         "jobs": 1000,  "workforce": 1600000, "sector": "retail",  "month": "May",      "reason": "Corporate product, design, and digital tech teams; relocations to Bentonville or NorCal" },
+    { "company": "Cisco",           "jobs": 4000,  "workforce": 86000,   "sector": "tech",    "month": "May",      "reason": "5% of workforce; investment shift to silicon, optics, security, AI; record Q3 revenue $15.8B" },
+    { "company": "Innovaccer",      "jobs": 340,   "workforce": 1133,    "sector": "health",  "month": "May",      "reason": "Shift to AI-native operating model; India and US offices; third layoff in four years" },
+    { "company": "Intuit",          "jobs": 3000,  "workforce": 17600,   "sector": "tech",    "month": "May",      "reason": "17% of workforce; simplifying corporate structure; TurboTax, QuickBooks, Credit Karma affected" },
+    { "company": "NPR",             "jobs": 300,   "workforce": 2500,    "sector": "other",   "month": "May",      "reason": "$8M budget gap from elimination of federal subsidies; voluntary buyouts across newsgathering desks" }
   ],
   "sectors": [
-    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 111670, "color": "#3266ad" },
+    { "sector": "tech",    "label": "Tech / Software",            "estimated_jobs": 119696, "color": "#3266ad" },
     { "sector": "finance", "label": "Finance / Fintech",          "estimated_jobs": 55960,  "color": "#8e44ad" },
     { "sector": "energy",  "label": "Energy / Industrial",        "estimated_jobs": 13500,  "color": "#16a085" },
-    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 35400,  "color": "#73726c" },
-    { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 15370,  "color": "#c0392b" },
-    { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 2700,   "color": "#e67e22" },
+    { "sector": "other",   "label": "Media / Consulting / Other", "estimated_jobs": 37221,  "color": "#73726c" },
+    { "sector": "retail",  "label": "Retail / Consumer",          "estimated_jobs": 16370,  "color": "#c0392b" },
+    { "sector": "health",  "label": "Healthcare / Pharma",        "estimated_jobs": 3040,   "color": "#e67e22" },
     { "sector": "biotech", "label": "Biotech / Biopharma",        "estimated_jobs": 10117,  "color": "#27ae60" }
   ]
 }
